@@ -1,0 +1,241 @@
+---
+title: 'React styling best practices.'
+metaTitle: 'React styling best practices.'
+metaDesc: 'The complete guide to make the best out of functional and simplified styling in ReactJS'
+summary: 'The complete guide to make the best out of functional and simplified styling in ReactJS'
+publishedAt: '2023-07-30'
+imageSrc: /images/react.webp
+---
+
+<CustomAvatar />
+
+ReactJS is popularly known as one of the most simplest web frameworks to build UI. Well, I both agree and disagree. From a naive standpoint, it does seem simple. However, there are several ways to make it incredibly complicated while leveraging it to our benefit.
+
+Firstly, let’s go through why React is so simple.
+
+1. **Learning curve**
+
+As someone learning to use React after being trained on plain HTML/CSS/JS, all you’d have to do is understand states and components. Believe it or not, we can convert the latter code into the former by simply moving the HTML code into a React component (basically a function) and the original JS code also into the same function. We should additionally convert all variables into states. The important thing to note here is that, we don’t really have to change the CSS code. You can leave it be.
+
+2. **Reusability**
+
+You don’t really have to redefine code anywhere. You can globally create it, give it a name and import it and use it anywhere else in the codebase you want.
+
+3. **Modular**
+
+Everything is completely flexible and modularised. It’s easier to write feature enhancements in such a codebase. Its easier to bug fix as well. The overall complexity is too low.
+
+**So, how do we make it complicated (better)?**
+
+Ironically, the answer’s pretty straightforward.
+
+All we have to do is create everything as a component. When I say “everything”, I mean **everything**.
+
+So, how do we really do this? One word. styled-components
+
+styled-components is a node library that allows you to write CSS inside JS. It helps you build components and style them at one place. In this case, you don’t need a separate .css file for every component you create.
+
+I will give you a better look at it. Below is a simple implementation of it.
+
+```javascript title="Component.styled.js"
+import styled from "styled-components/macro"
+
+export const Navbar = styled.div`
+    /*your styles here*/
+`;
+
+export const Section = styled.div`
+    /*your styles here*/
+`;
+
+export const Footer = styled.div`
+    /*your styles here*/
+`;
+```
+
+Notice how you’re defining the type of the tag (div) at the same place you’re writing the styles. Nifty, right? But do we take it to the next level?
+
+I’d like you to look at this folder structure carefully.
+
+```shell title="folderstructure"
+- src
+    - components
+        - navbar
+            - styles
+                navbar.styled.js
+            index.js
+        - footer
+            - styles
+                footer.styled.js
+            index.js
+        index.js
+
+    - pages
+        - Home.js
+        - Login.js
+    index.js
+```
+
+index.js in the root dir is the starting point for your code. The files under pages contain the specific pages of the website.
+
+Next up is components. I’m sure most React programmers have such a directory in their codebase. Componenting (not a real word) is a normal part of writing React code, however, this is a slightly more complicated version of it.
+
+Each component within components is a folder. Within each of these components, there is yet another folder called styles (which contains a singular file with all the styles). The need for this additional styles folder is arguable but it helps while perusing through the codebase later on in the project. The other file is an index.js file which has the boilerplate component functions which we will get to in a bit. The other index.js in the root of the components folder contains the export lines for all the individual components.
+
+Maybe that bare-bones explanation gave you a decent idea. Anyway I’d like to show you a working example.
+
+**/components/navbar/index.js**
+```javascript title="/components/navbar/index.js
+import React from "react";
+import {
+    CenterContainer,
+    Container,
+    Title,
+    Center,
+    TopContainer,
+    TitleContainer
+} from "./styles/navbar_styles";
+
+export default function Navbar({ children, ...restProps }) {
+    return <Container {...restProps}>{children}</Container>;
+}
+
+Navbar.TopContainer = function NavbarTopContainer({ children, ...restProps }) {
+    return <TopContainer {...restProps}>{children}</TopContainer>;
+};
+
+Navbar.Center = function NavbarCenter({ children, ...restProps }) {
+    return <Center {...restProps}>{children}</Ce>;
+};
+
+Navbar.TitleContainer = function NavbarTitleContainer({
+    children,
+    ...restProps
+}) {
+    return <TitleContainer {...restProps}>{children}</TitleContainer>;
+};
+
+Navbar.Title = function NavbarTitle({ children, ...restProps }) {
+    return <Title {...restProps}>{children}</Title>;
+};
+
+Navbar.CenterContainer = function NavbarCenterContainer({
+    children,
+    ...restProps
+}) {
+    return <CenterContainer {...restProps}>{children}</CenterContainer>;
+};
+```
+
+```javascript title="/components/navbar/styles/navbar.styled.js"
+import styled from "styled-components";
+import { BsSun } from "react-icons/bs";
+import { MdOutlineDarkMode } from "react-icons/md";
+
+export const Nav = styled.div``;
+
+export const TopContainer = styled.div`
+    display: flex;
+    justify-content: space-around;
+    width: auto;
+    height: auto;
+`;
+
+export const Container = styled.div`
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+    align-items: center;
+    width: auto;
+    height: 80vh;
+`;
+
+export const CenterContainer = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+`;
+
+export const TitleContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+`;
+
+export const Title = styled.h1`
+    font-size: 100px;
+    font-weight: 400;
+    color: ${(props) => props.color};
+    font-family: "Archer Gage";
+    cursor: pointer;
+    font-style: normal;
+
+    @media (max-width: 820px) {
+    font-size: 64px;
+    }
+
+    @media (max-width: 654px) {
+    font-size: 36px;
+    }
+`;
+```
+
+```javascript title="/components/index.js"
+export { default as Navbar } from "./navbar";
+```
+
+Let’s see how this is used in one of the pages
+
+```javascript title="/pages/Home.js"
+import { Navbar } from "../components";
+
+export default function Nav(props) {
+    return (
+    <>
+        <Navbar> 
+        <Navbar.TopContainer>
+            <Navbar.Title>{toptitle}</Navbar.TopTitle>
+        </Navbar.TopContainer>
+        <Navbar.Center>
+            <Navbar.CenterContainer>
+            ....something
+            </Navbar.CenterContainer>
+            <Navbar.TitleContainer>
+                {title}
+            </Navbar.TitleContainer>
+            <Navbar.CenterContainer>
+            
+            </Navbar.CenterContainer>
+        </Navbar.Center>
+        <Navbar.TopContainer>
+            <Navbar.Title>
+            {some other title}
+            </Navbar.Title>
+        </Navbar.TopContainer>
+        </Navbar>
+        </>
+    );
+}
+```
+The complexity of this project would become multifold when you do this to every individual component you make. You might need a hero-section, a footer, a global-button, an image carousel and what not.
+
+While it makes the life of a programmer a little bit monotonous, it has several huge advantages.
+
+1. Code complexity ⬆️ Code quality ⬆️
+
+1. The coding standards are pretty much carved on stone for new programmers.
+
+1. Debugging is easier than ever.
+
+1. You don’t need to worry about setting unique class-names.
+
+1. If you’re having protected information on your website and worried about automated scrapers, its nearly impossible for them to guess the randomised classnames produced by styled-components .
+
+1. There are literally no CSS conflicts (easily identifiable even if there’s any). It is guaranteed that changing your styles at one location *only* affects that location (unless its a container).
+
+1. styled-components incorporates an SCSS way of styling which is way better.
+
+1. You can send props in through your component and use it dynamically change styles without writing additional code.
+
+Thank you for reading through.
+
+Cheers.

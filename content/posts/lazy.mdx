@@ -1,0 +1,61 @@
+---
+title: 'Conquering Lazy Loading with Selenium — Python'
+metaTitle: 'Conquering Lazy Loading with Selenium — Python'
+metaDesc: 'This article will help you work around lazy loading in webpages using selenium'
+summary: 'This article will help you work around lazy loading in webpages using selenium'
+publishedAt: '2022-08-21'
+imageSrc: /images/lazy.gif
+---
+
+<CustomAvatar />
+
+Lazy loading is a design pattern commonly used in computer programming and mostly in web design and development to defer initialization of an object until the point at which it is needed. It can contribute to efficiency in the program’s operation if properly and appropriately used.
+
+As wikipedia defines it, lazy loading is a very well-known and widely used concept of loading resources only when you need them. It might sound absurd at first and pop such questions in your head, like:
+
+*Okay, so, websites used to load content they don’t need at all?*
+
+Yes, you’re absolutely right! Most websites used to load all of the content their website would ever need while you first load the webpage into the browser. But when some websites scaled to a level where they’d have to load tons of data (especially thousands of images and videos), they noticed poor performance from a daily users’ point of view. You could take Netflix for instance. They host thousands of movies on their website. Imagine all of the resources they’d have to manage.
+
+This is how lazy loading came into the picture. You would have come across a lot of websites loading new content as you scroll down (you can say by the loading animation). Now from a web scraper’s perspective, this isn’t a good thing because you be able to simply get the html code and scrape the contents using say [Scrapy](https://scrapy.org) or [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/). You’d have to manually go to the website, scroll down until it loads everything and copy the page source and there’s a good chance we’re in 2057 by then where websites are no longer a thing.
+
+This is where Selenium comes in. Selenium is more of an automation and testing tool than a web scraping tool.
+
+So how would you *actually* conquer Lazy-Loading? Here’s how.
+
+One amazing quirk about Selenium is that, it can execute JavaScript on the website you load. So you just keep scrolling using JavaScript until you can’t anymore. As simple as that!
+
+```python
+from selenium import webdriver
+
+url = '<your_url>'
+browser = webdriver.Safari()             # you can use any webdriver you want!
+browser.get(url)
+current_height = browser.execute_script('window.scrollTo(0,document.body.scrollHeight);')
+while True:
+    browser.execute_script('window.scrollTo(0,document.body.scrollHeight);')
+    time.sleep(1)
+    new_height = browser.execute_script('return document.body.scrollHeight')   
+    if new_height == current_height:      # this means we have reached the end of the page!
+        html = browser.page_source
+        break
+    prev_height = new_height
+```
+
+The above code scrolls to the maximum it can, until current_height and new_height are equal and this only happens when there is nothing more to scroll down to!
+
+Click [here](https://www.makeuseof.com/how-to-install-selenium-webdriver-on-any-computer-with-python/) to learn more on how to use web-drivers if you haven’t used selenium before.
+
+This [website](https://in.bookmyshow.com/explore/events-chennai) is a good example for you to test this on!
+
+**Conclusion**
+
+That’s it. Thank you for reading! Hope this was helpful.
+
+Cheers!
+
+You can find me on [GitHub](https://github.com/MinatoNamikaze02) and [LinkedIn](https://www.linkedin.com/in/arjhun-s-ba30b2230/).
+
+**References**
+
+[Selenium](https://www.selenium.dev)

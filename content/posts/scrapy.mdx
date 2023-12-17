@@ -1,0 +1,396 @@
+---
+title: 'Scraping Images using Scrapy.'
+metaTitle: 'Scraping Images using Scrapy'
+metaDesc: 'The complete guide to scrape images using Scrapy - Python'
+summary: 'The complete guide to scrape images using Scrapy - Python'
+publishedAt: '2023-07-30'
+imageSrc: /images/scrapy.webp
+---
+
+<CustomAvatar />
+
+> Imagine you’re an avid collector of online images (may not be a thing). One fine evening, you stumble across a beautiful website containing all the images you’d dream of having in your collection.
+> It’s not really efficient to go about clicking “save as” manually, is it? Well, here’s the automated efficient alternative.
+
+Web-scraping is a method by which you parse a website’s HTML code to extract content you need. This concept has various implications in our everyday lives. One very well-known example would be web-browsers. They make use of multiple scrapers/crawlers that go through the billions of pages out there to find updated content in different webpages and provide you with better search results.
+
+There are a bunch of different libraries out there for web-scraping and each have their own pros and cons. However, I personally recommend using Scrapy. It’s very sophisticated and fast. Although it has a rather steep learning curve, once you understand what’s happening behind-the-scenes, you will be equipped with the ability to make efficient, fast and powerful web-scrapers.
+> Curious already?
+
+**Installation**
+
+To install Scrapy, all you need is Python installed.
+
+If you don’t have Python, head on to their official website [here](https://www.python.org/) and get it installed (make sure to get Python3).
+
+Now open up your command prompt or bash and run,
+
+```shell
+pip3 install scrapy
+```
+
+You could take a quick peek at Scrapy’s official website and documentation [here](https://scrapy.org/).
+
+We also need another package called **pillow** to download the images. You can run,
+
+```shell
+pip3 install pillow
+```
+
+**Creating a Scrapy Project**
+
+Hop onto your terminal or command-prompt and type,
+
+```shell
+scrapy startproject example
+```
+
+Once you run it, you’ll see something like this:
+
+![command-line-output](https://cdn-images-1.medium.com/max/2186/1*aTEH7FImy-nvQNOdCrVygw.png)*command-line-output*
+
+As the prompt says, go ahead and initiate a spider. This is done by,
+
+```shell
+cd example
+scrapy genspider image-scraper www.example.com
+```
+
+We first switch into the directory where the project lives and create a new spider using the genspider command.
+
+I know you’re wondering why you’re made to go through so many cumbersome steps to create a simple project. You’re just downloading a set of images after all. This project may be simple, however, Scrapy was designed to integrate the complexity of advanced projects like having multiple spiders/crawlers scraping parallelly.
+
+Now that you have successfully created a spider. You can go on and open the folder on your preferred text-editor or IDE.
+
+If you use Visual Studio Code, you can just run:
+
+```shell
+code .
+```
+
+**Configurations**
+
+Assuming you’ve opened the project on a text editor, this is how your project directory would look like.
+
+![directory structure](https://cdn-images-1.medium.com/max/2000/1*9Ol3xMyQmK_-ISwtpiJoXw.png)*directory structure*
+
+*short detour*
+
+Before jumping into the code, if you haven’t installed any python extensions I’d suggest you go ahead and do so.
+
+![python extension](https://cdn-images-1.medium.com/max/3644/1*Qp-HJdRh1mrFUMMWPcDI_g.png)*python extension*
+
+This comes with python-Intellisense, linting, formatting and more.
+
+*Now, coming back to our problem at hand*
+
+Go ahead and open up the *spiders* subdirectory and click on image_scraper.py. It should look like,
+
+```python
+# /spiders/image_scraper.py
+import scrapy
+
+class ImageScraperSpider(scrapy.Spider):
+    name = 'image_scraper'
+    allowed_domains = ['www.example.com']
+    start_urls = ['http://www.example.com']
+
+    def parse(self, response):
+        pass
+```
+
+In this article, I will be scraping this [website](https://quotefancy.com/motivational-quotes) but you’re free to choose any website and modify the code to adapt to it.
+
+Now, change the **allowed_domains** and **start_urls** variables to as follows,
+
+```python
+# /spiders/image_scraper.py
+import scrapy
+
+class ImageScraperSpider(scrapy.Spider):
+    name = 'image_scraper'
+    allowed_domains = ['quotefancy.com']
+    start_urls = ['https://quotefancy.com/motivational-quotes']
+
+    def parse(self, response):
+            pass
+```
+
+The next step is to create an **Item**. Items are the containers used to collect the data that has been scraped. To define Items, we need to edit the** items.py** file under the **example**(the project name) directory. This is how it looks like,
+
+```python
+# /items.py
+
+import scrapy
+
+class ExampleItem(scrapy.Item):
+
+    pass
+```
+
+Just replace that class with this,
+
+```python
+class ImageScraperItem(scrapy.Item):
+
+    image_urls = scrapy.Field()
+
+    images = scrapy.Field()
+```
+
+Let me explain what I’ve done here. I have created a custom class called ImageScraperItem that has 2 fields, **image_urls** to hold the URLs and **images** to hold the scraped images.
+
+From the official documentation,
+> **Field** objects are used to specify metadata for each field.
+> The main goal of **Field** objects is to provide a way to define all field metadata in one place.
+
+Since our project involves downloading images, there are a few *flags* we must mention in the **settings.py** file.
+
+Go on and open it up,
+
+```python
+BOT_NAME = 'example'
+
+SPIDER_MODULES = ['example.spiders']
+
+NEWSPIDER_MODULE = 'example.spiders'
+
+#USER_AGENT = 'example (+http://www.yourdomain.com)'
+
+ROBOTSTXT_OBEY = True
+```
+
+It might contain a lot of comments. We can ignore that for now.
+
+We just need to add a couple lines of code.
+
+```python
+ITEM_PIPELINES = {'example.pipelines.ExamplePipeline': 1}
+
+IMAGES_STORE = 'downloads'
+```
+
+The **IMAGES_STORE** flag tells the scraper where to download the images. If you specify a path, it will be downloaded there. If you simply specify a name as in our case, it will be downloaded in that folder in the current working directory or if the folder doesn’t exist, a new one will be created.
+
+The **ITEM_PIPELINES** constant specifies where the pipeline exists. In our case **ExamplePipeline** lies in the **pipelines.py** file in the **example** directory, hence **example.pipelines.ExamplePipeline.**
+
+Open up the pipelines.py file and copy the below code into it,
+
+```python
+from scrapy.pipelines.images import ImagesPipeline
+
+class ExamplePipeline(ImagesPipeline):
+
+    def file_path(self, request, response=None, info=None, *, item=None):
+
+        return request.url.split('/')[-1]
+```
+
+From the official documentation,
+> The **Images** **Pipeline** has a few extra functions for processing images:
+> - Convert all downloaded images to a common format (JPG) and mode (RGB)
+> - Thumbnail generation
+> - Check images width/height to make sure they meet a minimum constraint
+
+**Ready, Set, Go**
+
+We’re all set now. We just need to open up the **image_scraper.py** file and start working.
+
+The code that scrapes content has to be in the **parse** function. You might see one already defined in the **image_scraper.py** file,
+
+```python
+def parse(self, response):
+
+    pass
+```
+
+We can remove the **pass** keyword and start working.
+> finally!
+
+I’ll give you the whole code here and then explain it by breaking it down into smaller parts.
+
+```python
+import scrapy
+
+from example.items import ImageScraperItem
+
+class ImageScraperSpider(scrapy.Spider):
+
+    name = 'image_scraper'
+
+    allowed_domains = ['quotefancy.com']
+
+    start_urls = ['https://quotefancy.com/motivational-quotes']
+
+    base_link = 'https://quotefancy.com/motivational-quotes'
+
+    max_pages = 1
+
+def parse(self, response):
+
+    #images_urls
+
+    obj = ImageScraperItem()
+
+    if response.status == 200:
+
+    #This query only returns the first image
+
+        rel_img_urls = response.css('img').getall()
+
+        #This returns all other images
+
+        rel_secondary_urls = response.css('img').xpath('@data-original').getall()
+
+        rel_img_urls.extend(rel_secondary_urls)
+
+        #Finding number of pages
+
+        number_of_pages = response.xpath('//a[@class="loadmore page-number"]/text()').getall()
+
+        obj['image_urls'] = self.url_join(rel_img_urls, response)
+
+        yield obj
+
+        #If the number_of_pages length is 1, then it means that there is only one page extra
+
+        if len(number_of_pages) == 1:
+
+            self.max_pages = (number_of_pages[0])
+
+        else:
+
+        #finding the max
+
+        number_of_pages = [int(x) for x in number_of_pages]
+
+        self.max_pages = str(max(number_of_pages))
+
+        # print(self.max_pages)
+
+    # updating link
+
+    next_page = self.base_link + '/page/' + str(self.max_pages)
+
+    # callback for the next page
+
+    yield scrapy.Request(next_page, callback=self.parse)
+
+# converting relative to absolute URLS
+
+def url_join(self, rel_img_urls, response):
+
+    urls = [response.urljoin(x) for x in rel_img_urls]
+
+    return urls
+```
+
+> NOTE: To avoid confusion and pointless Indentation errors, **do not copy** the code that’s been broken down into parts below. It’s simply for explanatory purposes.
+
+Firstly, we’re creating an Item object. Then we go on to check if the **response.status** is equal to 200 (more on status codes [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)). Otherwise, it means there was some error retrieving the website’s HTML code without which we cannot proceed.
+
+```python
+rel_img_urls = response.css('img').getall()
+
+#This returns all other images
+
+rel_secondary_urls = response.css('img').xpath('@data-    original').getall()
+
+rel_img_urls.extend(rel_secondary_urls)
+```
+
+This bit of code queries out all the links in the **src** attribute of **img** tags.
+
+In our problem, using the **src** attribute only returns the first image’s URL. In order to solve this, we take another attribute **data-original** which returns the links of all the other images. The** getall()** function returns all the results obtained in the page whereas the **get()** function returns the first result it encounters.
+
+```python
+obj['image_urls'] = self.url_join(rel_img_urls, response)
+
+def url_join(self, rel_img_urls, response):
+
+    urls = [response.urljoin(x) for x in rel_img_urls]
+
+    return urls
+```
+
+The above code is to convert all the links from relative to absolute URLs. This is done by the **urljoin()** method of the response object.
+> An absolute URL contains all the information necessary to locate a resource.
+> A relative* *URL locates a resource using an absolute URL as a starting point. In effect, the “complete URL” of the target is specified by concatenating the absolute and relative URLs.
+
+After this step, we can simply do,
+
+```python
+yield obj
+```
+
+This will begin to download all the images into the directory specified.
+
+Following this, we need to check if there are more pages and if there are any, we need to update the link to scrape the new page.
+
+```python
+number_of_pages = response.xpath('//a[@class="loadmore page-number"]/text()').getall()
+
+obj['image_urls'] = self.url_join(rel_img_urls, response)
+
+yield obj
+
+#If the number_of_pages length is 1, then it means that there is only one page extra
+
+if len(number_of_pages) == 1:
+
+    self.max_pages = (number_of_pages[0])
+
+else:
+
+    #finding the max
+
+    number_of_pages = [int(x) for x in number_of_pages]
+
+    self.max_pages = str(max(number_of_pages))
+
+    # print(self.max_pages)
+
+# updating link
+
+next_page = self.base_link + '/page/' + str(self.max_pages)
+
+# callback for the next page
+
+yield scrapy.Request(next_page, callback=self.parse)
+```
+
+The first line queries out the number of sub-pages. In our case, there is only one extra page.
+
+We are checking if the number of pages is equal to 1. If yes, we only have one extra page, we can now go ahead and update the link. Otherwise, we find the minimum value in the list and continue to update the link.
+
+Now we can **callback** the **parse** method with updated arguments.
+
+The above code provided might not work with other websites. You would have to tweak it a bit to make it work properly.
+
+That’s something for you to think about and work on!
+> That’s it!
+ 
+We’re done with the coding part!
+
+**Run!**
+
+Hop on to the terminal, navigate to the directory of the project and run
+
+```
+scrapy crawl image_scraper
+```
+
+If you have a good internet connection, it would take about 10 secs for all the images to get downloaded.
+
+![downloads](https://cdn-images-1.medium.com/max/3316/1*jtQDfqhHF-rtYW_HnVO5NQ.png)*downloads*
+> I’m flattered that you ended up reading till here.
+
+**Conclusion**
+
+Hopefully this guide showed you exactly how to get started with Scrapy. You can find the full source code [here](https://github.com/MinatoNamikaze02/scrapy-medium-repository/).
+
+**References**
+
+[Wikipedia](https://en.wikipedia.org/wiki/Scrapy), [Scrapy.org](https://docs.scrapy.org/en/latest/index.html)
+
+**PS**: This was my first story ever on medium — go easy on me :)

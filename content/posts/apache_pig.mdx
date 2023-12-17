@@ -1,0 +1,49 @@
+---
+title: 'Pretty Printing Apache Pig outputs'
+metaTitle: 'Pretty Printing Apache Pig outputs'
+metaDesc: 'Using python to get easily understanding outputs while using Apache Pig'
+summary: 'Using python to get easily understanding outputs while using Apache Pig'
+publishedAt: '2023-11-22'
+imageSrc: /images/apache_pig.jpeg
+---
+
+<CustomAvatar />
+
+If you’re into big-data analytics, you would have definitely come across Pig Latin scripts. It’s used in sync with Hadoop and has several useful applications.
+
+However, the outputs when you dump look ugly and incomprehensible like this. You can definitely dump these into csv files and work on them. But if you’re somewhat of a perfectionist or like to analyze outputs then and there, you’re at the right place!
+
+![pig output of macOS](https://cdn-images-1.medium.com/max/3044/1*ii25R7G3EXu50LA5K8Jqcg.png)*pig output of macOS*
+
+I made just the fix to work around this. It’s a simple python script that intercepts the pig output and pretty-prints it for you.
+
+Its incredibly easy to use and open-source as well. You can find the repository [here](https://github.com/MinatoNamikaze02/pig-manager).
+
+```shell
+pip install pig-manager
+```
+
+You can simply use it as:
+
+```shell
+pig-manager -f "path/to/your-file.pig"
+```
+
+The same huge incomprehensible output above now looks as such:
+
+![](https://cdn-images-1.medium.com/max/3268/1*TbZ2W-0BDM_o1v0-rUJ-lA.png)
+
+You can also dump the logs and original output into a file using the following options.
+
+```shell
+-f, --file_path: Path to the Pig script file.
+-dl, --dump_log: Flag to dump error output.
+-do, --dump_out: Flag to dump standard output.
+-l, --dump_loc: Location to dump output and error files.
+```
+
+If you think this makes your life easier, do drop in a clap and a follow :).
+
+Do consider starring the [repo](https://github.com/MinatoNamikaze02/pig-manager/)!
+
+Cheers!
