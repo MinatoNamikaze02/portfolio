@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { GithubButton, ResumeButton, LinkedInButton, EmailButton, TwitterButton} from '@/components/common/Buttons';
 import { createOgImage } from '@/lib/createOGImage';
 import randomFiveDigitNumber from '@/lib/generateFiveDigitNumber';
