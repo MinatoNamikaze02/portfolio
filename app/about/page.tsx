@@ -78,24 +78,6 @@ export default function About() {
           </div>
         </div>
       </div>
-
-      <hr className="h-px my-8 border-0 bg-gray-700"></hr>
-
-      <h2 className="text-3xl md:text-4xl text-slate-900 dark:text-white  font-bold leading-tight md:mt-10">
-        What I'm doing now:
-      </h2>
-
-      <p className="text-slate-600 dark:text-slate-300 text-lg md:text-xl mt-4 block">
-        Web and App development, Data Science, Web Scraping, Graph Analytics
-      </p>
-
-      <h2 className="text-3xl md:text-4xl text-slate-900 dark:text-white  font-bold leading-tight md:mt-10">
-        What I'm learning:
-      </h2>
-
-      <p className="text-slate-600 dark:text-slate-300 text-lg md:text-xl mt-4 block">
-        Kernel programming, LFS, Embedded Machine Learning
-      </p>
     </>
   );
 }
