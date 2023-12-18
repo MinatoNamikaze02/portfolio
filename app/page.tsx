@@ -56,16 +56,7 @@ export default function Home() {
             buff.
           </h1>
           <h2 className="md:max-w-2xl text-slate-600 dark:text-slate-300 mt-4 md:mt-6 text-lg md:text-xl">
-            Welcome to my portfolio. Feel free to browse my website, and drop
-            your suggestions on my{' '}
-            <a
-              className="text-sky-500"
-              target="_blank"
-              href="https://github.com/MinatoNamikaze02/portfolio/issues/new"
-            >
-              Github repo
-            </a>
-            . Thank you for visiting!
+            Thank you for visiting!
           </h2>
           <div className="block mt-8 md:mt-0 md:flex gap-3">
             <ResumeButton />
