@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "role": "Software Development Intern",
+      "company": "Zobyt Inc",
+      "duration": "Aug 2022 - Nov 2022",
+      "logoSrc": "/images/zobyt.jpeg",
+      "toolsUsed": "Python, FastAPI, PostgreSQL, Docker, TypeScript, React",
+      "description": "Maintained and developed the backend codebase built in Python and PostgreSQL. Led data scraping efforts and built a streamlined pipeline for information gathering. Set up responsive endpoints using external GraphQL APIs",
+      "location": "Bangalore, KA"
+    },
+    {
+      "id": 2,
+      "role": "Student Researcher",
+      "company": "AMuDA lab, Amrita School of Computing, Coimbatore.",
+      "duration": "Nov 2019 - December 2023",
+      "logoSrc": "/images/amrita.png",
+      "toolsUsed": "GraphDB, InfluxDB, IOT, Cyber-Physical-Systems, Networking, Hosting",
+      "description": "Worked on a grant project based on Cyber Physical Systems (Non-refrigerated preservation of agricultural produce using IOT). Redesigned and developed the entire dashboard and improved information flow. Conducted a usability study to improve the design.",
+      "location": "Coimbatore, TN"
+    },
+    {
+      "id": 3,
+      "role": "Software Development Intern",
+      "company": "YellowClub Inc",
+      "duration": "May 2023 - July 2023",
+      "logoSrc": "/images/yellowclub.png",
+      "toolsUsed": "React-native, GraphQL, AWS, Node.js",
+      "description": "Worked on the mobile application built on React Native. Integrated several new design features into the application. Worked on the GraphQL API, wrote tests and improved the codebase.",
+      "location": "Bangalore, KA"
+    }
+  ]
+  
