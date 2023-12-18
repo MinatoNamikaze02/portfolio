@@ -42,7 +42,6 @@ export default function ViewCounter({
       const count = snapshot.data()?.total || 0;
       setViews(count);
     };
-    console.log('viewsRef', viewsRef);  
     const unsubscribe = viewsRef.onSnapshot(onValueChange);
 
     return () => {
@@ -61,7 +60,6 @@ export default function ViewCounter({
             transaction.update(viewsRef, { total: currentViews + 1 });
           });
         }
-        console.log(firebaseConfig)
       } catch (error) {
         console.error('Error posting view:', error);
       }
