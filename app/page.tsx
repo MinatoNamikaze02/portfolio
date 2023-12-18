@@ -61,7 +61,7 @@ export default function Home() {
             <a
               className="text-sky-500"
               target="_blank"
-              // href="https://github.com/FrozenHearth/portfolio/discussions"
+              href="https://github.com/MinatoNamikaze02/portfolio/issues/new"
             >
               Github repo
             </a>

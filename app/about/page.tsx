@@ -67,8 +67,8 @@ export default function About() {
               quality of projects developed by students and revived a good coding culture within the university.
               <br/>
               <br/>
-              I was the Tech lead at my university's GDSC chapter. 
-              I planned, organised and spoke during workshops on Android, blockchain and AI.
+              I was a Tech lead/Cloud facilitator at my university's GDSC chapter. 
+              I co-organised several workshops during my tenure.
               <br />
               <br />
               Living in Bangalore, I'm surrounded by the best-of-the-best. I've learnt a lot from them
