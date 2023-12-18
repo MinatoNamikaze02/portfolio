@@ -38,7 +38,7 @@ export default function Projects() {
     <>
       <div className="mt-4 md:mt-10">
         <h1 className="text-4xl md:text-7xl text-slate-900 dark:text-white font-bold leading-tight md:mt-4">
-          Check out my projects.
+          I invest time on things that could potentially make a difference.
         </h1>
       </div>
 
