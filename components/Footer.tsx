@@ -19,7 +19,7 @@ export default function Footer() {
             className="text-md text-sky-500 sm:text-center dark:text-sky-400 hover:underline"
           >
             {' '}
-            Vishwanath B.
+            FrozenHearth
           </a>
         </span>
       </div>

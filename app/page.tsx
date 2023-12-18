@@ -56,7 +56,7 @@ export default function Home() {
             buff.
           </h1>
           <h2 className="md:max-w-2xl text-slate-600 dark:text-slate-300 mt-4 md:mt-6 text-lg md:text-xl">
-            Thank you for visiting!
+            Thanks for dropping by! Explore and enjoy. 
           </h2>
           <div className="block mt-8 md:mt-0 md:flex gap-3">
             <ResumeButton />
