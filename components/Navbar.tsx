@@ -100,7 +100,7 @@ export default function Navbar() {
           })}
           <Switch />
           <a
-            href="https://github.com/MinatoNamikaze/portfolio"
+            href="https://github.com/MinatoNamikaze02/portfolio"
             target="_blank"
             rel="noopener noreferrer"
             className="p-1 ml-2 mr-1 sm:ml-4"

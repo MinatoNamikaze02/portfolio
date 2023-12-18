@@ -53,13 +53,14 @@ export default function About() {
               {`Hey, I'm S Arjhun. I live in Bangalore, India. 👋`}
             </h1>
             <p className=" text-slate-600 dark:text-slate-300 mt-8 text-lg md:text-xl">
-              I am currently working as a Software Development Engineer I at
-              Oracle. In my free time, I also enjoy freelancing.
+              {/* I am currently working as a Software Development Engineer I at
+              Oracle.  */}
+              I'm currently a final year student at Amrita University, Coimbatore.
+              I also try to freelance in my free-time
               <br />
               <br />
               My skills span across web and app development, system engineering,
               web scraping, UI/UX and social-network analytics. I love solving problems.
-              I think google should hire me because I love solving problems. 
               <br/>
               <br/>
               I have experience being on both sides of the table, as a developer and as a coordinator. 
@@ -71,8 +72,8 @@ export default function About() {
               I co-organised several workshops during my tenure.
               <br />
               <br />
-              Living in Bangalore, I'm surrounded by the best-of-the-best. I've learnt a lot from them
-              and it helps me stay updated.
+              {/* Living in Bangalore, I'm surrounded by the best-of-the-best. I've learnt a lot from them
+              and it helps me stay updated. */}
             </p>
           </div>
         </div>
