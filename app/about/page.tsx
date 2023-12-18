@@ -55,8 +55,7 @@ export default function About() {
             <p className=" text-slate-600 dark:text-slate-300 mt-8 text-lg md:text-xl">
               {/* I am currently working as a Software Development Engineer I at
               Oracle.  */}
-              I'm currently a final year student at Amrita University, Coimbatore.
-              I also try to freelance in my free-time
+              Technical Evangelist, Software Engineer, and an Aspiring Entrepreneur.
               <br />
               <br />
               My skills span across web and app development, system engineering,
@@ -68,8 +67,7 @@ export default function About() {
               quality of projects developed by students and revived a good coding culture within the university.
               <br/>
               <br/>
-              I was a Tech lead/Cloud facilitator at my university's GDSC chapter. 
-              I co-organised several workshops during my tenure.
+              
               <br />
               <br />
               {/* Living in Bangalore, I'm surrounded by the best-of-the-best. I've learnt a lot from them
