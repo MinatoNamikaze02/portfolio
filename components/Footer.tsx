@@ -8,7 +8,7 @@ export default function Footer() {
       </div>
       <div className="w-full mx-auto max-w-screen-xl pb-2 flex justify-center">
         <span className="text-md text-gray-500 sm:text-center dark:text-gray-400">
-          © 2021 Arjhun Sreedar
+          © 2023 Arjhun Sreedar
         </span>
       </div>
       <div className="w-full mx-auto max-w-screen-xl pb-4 flex justify-center">

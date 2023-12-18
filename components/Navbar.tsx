@@ -23,6 +23,9 @@ const navItems: NavItems = {
   '/blog': {
     name: 'Blog',
   },
+  '/projects': {
+    name: 'Projects',
+  },
 };
 
 export default function Navbar() {
