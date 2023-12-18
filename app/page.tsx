@@ -1,4 +1,4 @@
-import { GithubButton, ResumeButton } from '@/components/common/Buttons';
+import { GithubButton, ResumeButton, LinkedInButton, EmailButton, TwitterButton} from '@/components/common/Buttons';
 import { createOgImage } from '@/lib/createOGImage';
 import randomFiveDigitNumber from '@/lib/generateFiveDigitNumber';
 import type { Metadata } from 'next';
@@ -61,6 +61,9 @@ export default function Home() {
           <div className="block mt-8 md:mt-0 md:flex gap-3">
             <ResumeButton />
             <GithubButton />
+            <TwitterButton />
+            <LinkedInButton />
+            <EmailButton />
           </div>
         </header>
       </div>
