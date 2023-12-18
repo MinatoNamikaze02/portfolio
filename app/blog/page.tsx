@@ -39,6 +39,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function BlogListPage() {
+
   return (
     <>
       <div className="mt-4 md:mt-10">
@@ -54,7 +55,8 @@ export default function BlogListPage() {
             rel="noopener noreferrer"
             className="text-sky-400 hover:underline inline"
           >
-            {' '}Linkedin.
+            {' '}
+            Linkedin.
           </a>
         </h2>
       </div>

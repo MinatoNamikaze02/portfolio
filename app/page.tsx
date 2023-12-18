@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
           url: `${ogImage}?${randomFiveDigitNumber()}`,
           width: 1600,
           height: 836,
-          alt: 'Vishwanath B.',
+          alt: 'Arjhun S.',
         },
       ],
       title: 'Arjhun S.',
