@@ -55,19 +55,30 @@ export default function About() {
             <p className=" text-slate-600 dark:text-slate-300 mt-8 text-lg md:text-xl">
               {/* I am currently working as a Software Development Engineer I at
               Oracle.  */}
-              Technical Evangelist, Software Engineer, and an Aspiring Entrepreneur.
+              <b><u>Technical Evangelist</u></b>, <b><u>Software Engineer</u></b>, and an <b><u>Aspiring Entrepreneur</u></b>.
+              <br />
+              <br />
+              I love solving problems. I have always been keen about absorbing ideas that make a difference.
               <br />
               <br />
               My skills span across web and app development, system engineering,
-              web scraping, UI/UX and social-network analytics. I love solving problems.
+              web scraping, UI/UX and social-network analytics.
               <br/>
               <br/>
               I have experience being on both sides of the table, as a developer and as a coordinator. 
-              I co-founded a community initiative in my university called iDEA that improved the 
-              quality of projects developed by students and revived a good coding culture within the university.
+              I co-founded a community initiative within my university called <b>iDEA</b> that improved the 
+              quality of projects developed by students and revived a good coding culture after the covid slump.
               <br/>
               <br/>
-              
+              I love writing techincal content and have been doing it for a while now. I have written several articles on {' '}
+              <a
+                href="https://medium.com/@MinatoNamikaze02"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sky-400 hover:underline inline"
+              >
+                {' '}Medium.
+              </a>
               <br />
               <br />
               {/* Living in Bangalore, I'm surrounded by the best-of-the-best. I've learnt a lot from them
