@@ -11,6 +11,3 @@ The project is deployed on Vercel. The main branch is automatically deployed to 
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-Tip to [Vishwanath B](https://github.com/FrozenHearth) for his amazing designs.
