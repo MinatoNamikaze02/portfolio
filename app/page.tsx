@@ -47,7 +47,7 @@ export default function Home() {
             </span>
             amateur{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-600">
-              guitarist{' '}
+              designer{' '}
             </span>
             and a{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-500 to-slate-600">
