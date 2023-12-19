@@ -3,30 +3,30 @@
       "id": 1,
       "role": "Software Development Intern",
       "company": "Zobyt Inc",
-      "duration": "Aug 2022 - Nov 2022",
+      "duration": "Aug 2022 - Nov 2022 (4 mos)",
       "logoSrc": "/images/zobyt.jpeg",
       "toolsUsed": "Python, FastAPI, PostgreSQL, Docker, TypeScript, React",
-      "description": "Maintained and developed the backend codebase built in Python and PostgreSQL. Led data scraping efforts and built a streamlined pipeline for information gathering. Set up responsive endpoints using external GraphQL APIs",
+      "description": "Maintained and developed the backend codebase built in Python and PostgreSQL. Led data scraping efforts and built a streamlined pipeline for information gathering. Designed and integrated a carpooling algorithm from scratch to minimize the overall distance travelled (Runs in O(nlogn) time). Managed and developed a freelance project through the company for a client where I built an application to automate complex multi-staged excel calculations through a web interface. Created a discord bot from scratch to help aid communications and workflow within the company.",
       "location": "Bangalore, KA"
     },
     {
       "id": 2,
       "role": "Student Researcher",
       "company": "AMuDA lab, Amrita School of Computing, Coimbatore.",
-      "duration": "Nov 2019 - December 2023",
+      "duration": "Nov 2019 - Dec 2023 (1 year 1 mos)",
       "logoSrc": "/images/amrita.png",
       "toolsUsed": "GraphDB, InfluxDB, IOT, Cyber-Physical-Systems, Networking, Hosting",
-      "description": "Worked on a grant project based on Cyber Physical Systems (Non-refrigerated preservation of agricultural produce using IOT). Redesigned and developed the entire dashboard and improved information flow. Conducted a usability study to improve the design.",
+      "description": "Worked on a Sony grant project based on Cyber Physical Systems (Non-refrigerated preservation of agricultural produce using IOT). Redesigned and developed the entire dashboard and improved information flow. Conducted a usability study to improve the design. Worked with a complete microservices architecture. Integrated communication protocols like MQTT, Websockets through Node.js to communicate with the edge device. Worked on integrating GraphDB (developed the onotology) and InfluxDB(to perform timestamp based analysis) to the project. Currently supports local farmers in Coimbatore, TN.",
       "location": "Coimbatore, TN"
     },
     {
       "id": 3,
       "role": "Software Development Intern",
       "company": "YellowClub Inc",
-      "duration": "May 2023 - July 2023",
+      "duration": "May 2023 - July 2023 (3 mos)",
       "logoSrc": "/images/yellowclub.png",
       "toolsUsed": "React-native, GraphQL, AWS, Node.js",
-      "description": "Worked on the mobile application built on React Native. Integrated several new design features into the application. Worked on the GraphQL API, wrote tests and improved the codebase.",
+      "description": "Worked on the mobile application built on React Native. Integrated several new design features into the application. Worked on the GraphQL API, wrote tests and improved the codebase. Worked with notifications through WhatsApp, SMS, and email through AWS and WhatsApp API. ",
       "location": "Bangalore, KA"
     }
   ]

@@ -28,7 +28,10 @@ const navItems: NavItems = {
   },
   'experience': {
     name: 'Experience'
-  }
+  },
+  'roles': {
+    name: 'Roles'
+  },
 };
 
 export default function Navbar() {

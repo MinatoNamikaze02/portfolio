@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "logo": "/images/gdsc.webp",
+        "title": "Core Team & Cloud Facilitator",
+        "organisation": "Google Developer Student Clubs",
+        "duration": "Aug 2022 - Aug 2023",
+        "description": "Organised workshops on Android, ML, Flutter, Blockchain, etc for the students of the college. Was the google cloud facilitator and conducted workshops on cloud computing and cloud services. Helped nearly 100 students get free google cloud credits to learn and build projects."
+    },
+    {
+        "id": 2,
+        "logo": "/images/idea_c.jpeg",
+        "title": "Co-Founder",
+        "organisation": "iDEA community",
+        "duration": "June 2023 - present",
+        "description": "iDEA is an idea-fostering, FOSS promoting community of students of the college. We foster ideas and enable students to make products that serve purpose to the community.",
+        "link": {
+            "url": "https://ideacommunity.in",
+            "alt": "ideacommunity.in"
+        }
+    }
+]
