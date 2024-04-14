@@ -36,11 +36,11 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function Projects() {
   return (
     <>
-{/*       <div className="mt-4 md:mt-10">
+      <div className="mt-4 md:mt-10">
         <h1 className="text-4xl md:text-7xl text-slate-900 dark:text-white font-bold leading-tight md:mt-4">
-          I invest time on things that could potentially make a difference.
+          My projects.
         </h1>
-      </div> */}
+      </div>
 
       <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4 gap-y-6 mt-8">
         {projectsData.map((project) => (
