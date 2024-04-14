@@ -43,9 +43,9 @@ export default function BlogListPage() {
   return (
     <>
       <div className="mt-4 md:mt-10">
-{/*         <h1 className="text-4xl md:text-7xl text-slate-900 dark:text-white font-bold leading-tight md:mt-4">
-          I write about the things that make me curious.
-        </h1> */}
+        <h1 className="text-4xl md:text-7xl text-slate-900 dark:text-white font-bold leading-tight md:mt-4">
+          Blog
+        </h1>
         <h2 className="text-slate-600 dark:text-slate-300 max-w-2xl text-lg md:text-xl my-0 mt-4 md:mt-8">
           Always up for a convo about tech in general. Feel free to connect with
           me on{' '}
