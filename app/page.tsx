@@ -62,7 +62,6 @@ export default function Home() {
           <div className="block mt-8 md:mt-0 md:flex gap-3">
             <ResumeButton />
             <GithubButton />
-            <TwitterButton />
             <LinkedInButton />
             <EmailButton />
           </div>
