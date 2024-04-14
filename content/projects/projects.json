@@ -2,7 +2,7 @@
     {
         "id": 1,
         "title": "Jargon",
-        "description": "A bot that analyses terms-and-conditions and provides a summary of the key points using Named Entity Recognition and Sentiment Analysis.",
+        "description": "A bot that analyses terms-and-conditions and provides a summary of the key points using Named Entity Recognition.",
         "timeframe": "April 2023 - July 2023",
         "imageSrc": "/images/jargon.svg",
         "imageAlt": "Jargon",
