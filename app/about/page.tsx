@@ -61,8 +61,8 @@ export default function About() {
               I love solving problems. I have always been keen about absorbing ideas that make a difference.
               <br />
               <br />
-              My skills span across web and app development, system engineering,
-              web scraping, UI/UX and social-network analytics.
+              My skills span across Backend-development, Generative-AI,
+              Web-Scraping, UI/UX and a bit of Network-Analytics.
               <br/>
               <br/>
               I have experience being on both sides of the table, as a developer and as a coordinator. 
@@ -81,8 +81,6 @@ export default function About() {
               </a>
               <br />
               <br />
-              {/* Living in Bangalore, I'm surrounded by the best-of-the-best. I've learnt a lot from them
-              and it helps me stay updated. */}
             </p>
           </div>
         </div>
