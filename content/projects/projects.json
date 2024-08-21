@@ -9,7 +9,7 @@
         "githubLink": "https://github.com/MinatoNamikaze02/Jargon"
     },
     {
-        "id": 3,
+        "id": 2,
         "title": "iDEA community website",
         "description": "A website for the iDEA community of Amrita Vishwa Vidyapeetham   to share their projects and ideas. Written in React. Singlehandedly developed the website.",
         "timeframe": "May 2023 - June 2023",
@@ -18,12 +18,21 @@
         "githubLink": "https://github.com/IDEA-Amrita/iDEA"
     },
     {
-        "id": 4,
+        "id": 3,
         "title": "Twitter Disaster Classification",
         "description": "A multi-binned classifer that can look for specific disasters in tweet content. It is integrated with a tweet scraping pipeline that simultaneously also predicts the disasters.",
         "timeframe": "Aug 2022 - Oct 2022",
         "imageSrc": "/images/twitter.webp",
         "imageAlt": "twitter",
         "githubLink": "https://github.com/MinatoNamikaze02/twitter-disaster-classification"
+    },
+    {
+        "id": 4,
+        "title": "SuitUp",
+        "description": "Suit Up is a smart job search assistant that leverages Generative AI and Jobspy to track job opportunities that match your skills. By simply uploading your resume, Suit Up will scan and display relevant job listings from multiple sources, all in one centralized location.",
+        "timeframe": "Jul 2024 - Aug 2024",
+        "imageSrc": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVSEP9RycYV7WJJSvJPzIM1wNxO2kQ5LTmFA&s",
+        "imageAlt": "job-scraping",
+        "githubLink": "https://github.com/MinatoNamikaze02/suitup"
     }
 ]
