@@ -31,7 +31,7 @@
         "title": "SuitUp",
         "description": "Suit Up is a smart job search assistant that leverages Generative AI and Jobspy to track job opportunities that match your skills. By simply uploading your resume, Suit Up will scan and display relevant job listings from multiple sources, all in one centralized location.",
         "timeframe": "Jul 2024 - Aug 2024",
-        "imageSrc": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVSEP9RycYV7WJJSvJPzIM1wNxO2kQ5LTmFA&s",
+        "imageSrc": "/images/suitup.jpg",
         "imageAlt": "job-scraping",
         "githubLink": "https://github.com/MinatoNamikaze02/suitup"
     }
