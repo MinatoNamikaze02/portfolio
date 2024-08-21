@@ -24,7 +24,7 @@
       "role": "Software Development Engineer Intern",
       "company": "carbonmarketsHQ",
       "duration": "Feb 2024 - July 2024 (6 mos)",
-      "logoSrc": "https://media.licdn.com/dms/image/v2/D560BAQHVkQQySouYzw/company-logo_200_200/company-logo_200_200/0/1705149084851?e=1732147200&v=beta&t=dEmKMP8ofoIyFr800QyGqX7JtmDIAfOvyZoXfmK6JtA",
+      "logoSrc": "/images/carbonmarketshqlogo.jpg",
       "toolsUsed": "Python, FastAPI, PostgreSQL, GenerativeAI",
       "description": "Was responsible for building and deploying a data integration pipeline for multi-source data standardisation of carbon sequestration data, with the key focus being on update dependability, consistency and data-exception handling.\nWorked solely on a Generative AI powered analytics engine on aggregated climate data.Was responsible for building and deploying a data integration pipeline for multi-source data standardisation of carbon sequestration data, with the key focus being on update dependability, consistency and data-exception handling. Worked solely on a Generative AI powered analytics engine on aggregated climate data.",
       "location": "Bangalore, KA"
@@ -34,7 +34,7 @@
       "role": "Associate Applications Developer",
       "company": "Oracle",
       "duration": "July 2024 - Present",
-      "logoSrc": "https://media.licdn.com/dms/image/v2/D4E0BAQHYCgYovUuPtQ/company-logo_100_100/company-logo_100_100/0/1665755678957/oracle_logo?e=1732147200&v=beta&t=swSz8QMS84F4hqzDayG6hfI5NkOrYMZOi0txgEobbqs",
+      "logoSrc": "/images/oraclelogo",
       "toolsUsed": "Java, OJET, PL/SQL, TypeScript",
       "description": "Working in the Enterprise risk and finance team within Oracle's financial services division.",
       "location": "Bangalore, KA"
