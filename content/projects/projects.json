@@ -20,7 +20,7 @@
     {
         "id": 3,
         "title": "iDEA community website",
-        "description": "A website for the iDEA community of Amrita Vishwa Vidyapeetham   to share their projects and ideas. Written in React. Singlehandedly developed the website.",
+        "description": "A website for the iDEA community of Amrita Vishwa Vidyapeetham to share their projects and ideas. Written in React. Singlehandedly developed the website.",
         "timeframe": "May 2023 - June 2023",
         "imageSrc": "/images/idea.jpeg",
         "imageAlt": "idea",
@@ -29,10 +29,10 @@
     {
         "id": 4,
         "title": "Twitter Disaster Classification",
-        "description": "A multi-binned classifer that can look for specific disasters in tweet content. It is integrated with a tweet scraping pipeline that simultaneously also predicts the disasters.",
+        "description": "A multi-binned classifier that can look for specific disasters in tweet content. It is integrated with a tweet scraping pipeline that simultaneously also predicts the disasters.",
         "timeframe": "Aug 2022 - Oct 2022",
         "imageSrc": "/images/twitter.webp",
         "imageAlt": "twitter",
         "githubLink": "https://github.com/MinatoNamikaze02/twitter-disaster-classification"
-    },
+    }
 ]
