@@ -44,7 +44,7 @@ export default function Home() {
             </span>{' '}
             engineer,{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-              Cricketer,{' '}
+              Technical Writer, {' '}
             </span>
             amateur{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-600">
@@ -57,7 +57,7 @@ export default function Home() {
             buff.
           </h1>
           <h2 className="md:max-w-2xl text-slate-600 dark:text-slate-300 mt-4 md:mt-6 text-lg md:text-xl">
-            Thanks for dropping by! Explore and enjoy. 
+            Welcome!
           </h2>
           <div className="block mt-8 md:mt-0 md:flex gap-3">
             <ResumeButton />
