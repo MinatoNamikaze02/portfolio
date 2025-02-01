@@ -3,7 +3,7 @@
 A portfolio website built using Next.js and tailwindcss.
 
 ## Deployment
-The project is deployed on Vercel. The main branch is automatically deployed to [arjunsreedar.tech](https://arjunsreedar.tech) upon new commits.
+The project is deployed on Vercel. The main branch is automatically deployed to [arjunsreedar.xyz](https://arjunsreedar.xyz) upon new commits.
 
 ## Built With
 - Next.js
