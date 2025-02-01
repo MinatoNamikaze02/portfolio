@@ -1,6 +1,5 @@
 import { allPosts } from 'contentlayer/generated';
 import Link from 'next/link';
-import ViewCounter from '@/components/common/ViewCounter';
 import Image from 'next/image';
 
 
@@ -50,9 +49,9 @@ export default function BlogListPage() {
               </div>
               <div className="mt-3 sm:mt-6 p-1">
                 <span className="text-slate-400 font-semibold dark:text-slate-400 text-lg sm:text-xl my-2">
-                  {post.publishedAtFormatted}
-                  <span className="mx-3"> — </span>
-                  <ViewCounter trackView={false} slug={post.slug} />
+                  {post.publishedAt}
+                  {/* <span className="mx-3"> — </span> */}
+                  {/* <ViewCounter trackView={false} slug={post.slug} /> */}
                 </span>
                 <header className="text-slate-900 dark:text-white font-semibold leading-tight text-2xl sm:text-3xl mt-4">
                   {post.title}

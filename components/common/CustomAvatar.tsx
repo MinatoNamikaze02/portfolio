@@ -19,7 +19,7 @@ export default function CustomAvatar() {
           target="_blank"
           href="https://twitter.com/arjunta_varudhu"
         >
-          @arjunta_varudhu
+          @arjuns0206
         </a>
       </div>
     </div>

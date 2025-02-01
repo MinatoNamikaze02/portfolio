@@ -79,7 +79,7 @@ export default function Navbar() {
           lg:font-bold text-sky-400 hover:cursor-pointer text-xl lg:text-3xl"
         >
           <BrandLogo height="48" width="48" />
-          Arjhun S
+          Arjun Sreedar
         </Link>
         <Link
           href="/"

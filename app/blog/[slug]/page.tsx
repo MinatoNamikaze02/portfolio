@@ -1,47 +1,8 @@
-import ViewCounter from '@/components/common/ViewCounter';
 import { allPosts } from 'contentlayer/generated';
 import MarkdownContent from '@/components/common/MDXComponents';
 import { notFound } from 'next/navigation';
-import { createOgImage } from '@/lib/createOGImage';
-import randomFiveDigitNumber from '@/lib/generateFiveDigitNumber';
-import type { Metadata } from 'next';
 import Sidebar from '@/components/Sidebar';
 import { Params } from '@/app/types';
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Params;
-}): Promise<Metadata> {
-  const post = allPosts.find((post) => post.slug === params.slug);
-  const ogImage = createOgImage({
-    title: post?.title || '',
-    meta: [post?.summary].join(''),
-  });
-  return {
-    title: `${post?.title} | Vishwanath B.`,
-    description: `${post?.summary}`,
-    openGraph: {
-      images: [
-        {
-          url: `${ogImage}?${randomFiveDigitNumber()}`,
-          width: 1600,
-          height: 836,
-          alt: post?.title,
-        },
-      ],
-      title: post?.title,
-      description: post?.summary,
-      url: `${process.env.NEXT_PUBLIC_URL}/${post?.slug}`,
-      type: 'article',
-    },
-    twitter: {
-      title: `${post?.title}`,
-      description: `${post?.summary}`,
-      card: 'summary_large_image',
-    },
-  };
-}
 
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
@@ -65,10 +26,10 @@ export default function PostPage({ params }: { params: Params }) {
           </h1>
           <div className="flex items-center mt-2">
             <span className="text-slate-600 dark:text-slate-400 rounded text-base inline-block">
-              {post.publishedAtFormatted}
+              {post.publishedAt}
             </span>
-            <span className="mx-3">-</span>
-            <ViewCounter trackView slug={post.slug} />
+            {/* <span className="mx-3">-</span>
+            <ViewCounter trackView slug={post.slug} /> */}
           </div>
         </header>
 
