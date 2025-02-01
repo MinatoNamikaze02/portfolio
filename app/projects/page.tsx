@@ -1,37 +1,5 @@
 import Image from 'next/image';
 import projectsData from '../../content/projects/projects.json';
-import { createOgImage } from '@/lib/createOGImage';
-import type { Metadata } from 'next';
-import randomFiveDigitNumber from '@/lib/generateFiveDigitNumber';
-
-export async function generateMetadata(): Promise<Metadata> {
-  const ogImage = createOgImage({
-    title: 'Arjhun S. | Projects',
-    meta: ['Welcome to my projects page'].join(''),
-  });
-  return {
-    title: 'Arjhun S. | Projects',
-    description: 'Welcome to my projects page.',
-    openGraph: {
-      images: [
-        {
-          url: `${ogImage}?${randomFiveDigitNumber()}`,
-          width: 1600,
-          height: 836,
-          alt: 'Arjhun S.',
-        },
-      ],
-      title: 'Arjhun S. | Projects',
-      description: 'Welcome to my projects page.',
-      url: `${process.env.NEXT_PUBLIC_URL}/projects`,
-    },
-    twitter: {
-      title: 'Arjhun S. | Projects',
-      description: 'Welcome to my projects page.',
-      card: 'summary_large_image',
-    },
-  };
-}
 
 export default function Projects() {
   return (

@@ -1,38 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from 'next/image';
-import avatar from '@/public/images/me_big.jpg';
-import { createOgImage } from '@/lib/createOGImage';
-import type { Metadata } from 'next';
-import randomFiveDigitNumber from '@/lib/generateFiveDigitNumber';
-
-export async function generateMetadata(): Promise<Metadata> {
-  const ogImage = createOgImage({
-    title: 'Arjhun S. | About Me',
-    meta: ['A few things about me'].join(''),
-  });
-  return {
-    title: 'Arjhun S. | About Me',
-    description: 'Welcome to my about page.',
-    openGraph: {
-      images: [
-        {
-          url: `${ogImage}?${randomFiveDigitNumber()}`,
-          width: 1600,
-          height: 836,
-          alt: 'Arjhun S.',
-        },
-      ],
-      title: 'Arjhun S. | About Me',
-      description: 'Welcome to my about page.',
-      url: `${process.env.NEXT_PUBLIC_URL}/about`,
-    },
-    twitter: {
-      title: 'Arjhun S.',
-      card: 'summary_large_image',
-      description: 'Welcome to my about page.',
-    },
-  };
-}
+import avatar from '@/public/images/arjhun_personal.jpeg';
 
 export default function About() {
   return (
@@ -44,42 +12,53 @@ export default function About() {
               className='"aspect-square rotate-3 rounded-2xl object-cover bg-zinc-800'
               src={avatar}
               alt="Arjhun S."
-              priority
               width={400}
+              height={400}
             />
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-3xl md:text-5xl text-slate-900 dark:text-white  font-bold leading-tight md:mt-4">
-              {`Hey, I'm S Arjhun. I live in Chennai, India. 👋`}
+              {`Hey, I'm Arjun. I live in Bengaluru, India. 👋`}
             </h1>
             <p className=" text-slate-600 dark:text-slate-300 mt-8 text-lg md:text-xl">
-              {/* I am currently working as a Software Development Engineer I at
-              Oracle.  */}
-              <b><u>Technical Evangelist</u></b>, <b><u>Software Engineer</u></b>, and an <b><u>Aspiring Entrepreneur</u></b>.
+              <b>
+                <u>Technical Evangelist</u>
+              </b>
+              ,{' '}
+              <b>
+                <u>Software Engineer</u>
+              </b>
+              , and an{' '}
+              <b>
+                <u>Aspiring AI Engineer</u>
+              </b>
+              .
               <br />
               <br />
-              I love solving problems. I have always been keen about absorbing ideas that make a difference.
+              I love solving problems through code, whether it's optimizing
+              backend systems, scaling cloud infrastructures, or experimenting
+              with Deep Neural Networks.
               <br />
               <br />
-              My skills span across Backend-development, Generative-AI,
-              Web-Scraping, UI/UX and a bit of Network-Analytics.
-              <br/>
-              <br/>
-              I have experience being on both sides of the table, as a developer and as a coordinator. 
-              I co-founded a community initiative within my university called <b>iDEA</b> that improved the 
-              quality of projects developed by students and revived a good coding culture after the covid slump.
-              <br/>
-              <br/>
-              I love writing techincal content and have been doing it for a while now. I have written several articles on {' '}
+              Beyond my work as a Software Engineer, I enjoy exploring AI-driven solutions, from NLP models to graph-based analytics. I have contributed to research in computational social science, sustainability, and machine learning, which has fueled my curiosity about data-driven insights and how they can impact businesses and society.
+              I also love writing technical content on{' '}
               <a
                 href="https://medium.com/@MinatoNamikaze02"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sky-400 hover:underline inline"
               >
-                {' '}Medium.
+                {' '}
+                Medium.
               </a>
               <br />
+              <br />
+              Apart from tech, I have a deep passion for cricket. Having been a professional cricketer since age 9,
+              I have a keen interest in cricket analytics and data-driven insights.
+              <br />
+              <br />
+              If you're into AI, cloud, or even cricket analytics, let's
+              connect! 🚀
               <br />
             </p>
           </div>

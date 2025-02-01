@@ -4,7 +4,7 @@ const { withContentlayer } = require('next-contentlayer');
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['localhost'],
+    domains: ['localhost', 'media.licdn.com'],
   },
   experimental: {
     appDir: true,

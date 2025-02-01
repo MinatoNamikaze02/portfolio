@@ -1,37 +1,5 @@
 import Image from 'next/image';
 import rolesData from '../../content/experience/roles.json';
-import { createOgImage } from '@/lib/createOGImage';
-import type { Metadata } from 'next';
-import randomFiveDigitNumber from '@/lib/generateFiveDigitNumber';
-
-export async function generateMetadata(): Promise<Metadata> {
-  const ogImage = createOgImage({
-    title: 'Arjhun S. | Roles',
-    meta: ['Welcome to my roles page'].join(''),
-  });
-  return {
-    title: 'Arjhun S. | Roles',
-    description: 'Welcome to my roles page.',
-    openGraph: {
-      images: [
-        {
-          url: `${ogImage}?${randomFiveDigitNumber()}`,
-          width: 1600,
-          height: 836,
-          alt: 'Arjhun S.',
-        },
-      ],
-      title: 'Arjhun S. | Roles',
-      description: 'Welcome to my roles page.',
-      url: `${process.env.NEXT_PUBLIC_URL}/roles`,
-    },
-    twitter: {
-      title: 'Arjhun S. | Roles',
-      description: 'Welcome to my roles page.',
-      card: 'summary_large_image',
-    },
-  };
-}
 
 export default function ExperiencePage() {
   return (

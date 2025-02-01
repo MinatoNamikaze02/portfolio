@@ -2,41 +2,7 @@ import { allPosts } from 'contentlayer/generated';
 import Link from 'next/link';
 import ViewCounter from '@/components/common/ViewCounter';
 import Image from 'next/image';
-import { createOgImage } from '@/lib/createOGImage';
-import type { Metadata } from 'next';
-import randomFiveDigitNumber from '@/lib/generateFiveDigitNumber';
 
-export async function generateMetadata(): Promise<Metadata> {
-  const ogImage = createOgImage({
-    title: 'Arjhun S. | Blog',
-    meta: ['Welcome to my blog.'].join(''),
-  });
-  return {
-    title: 'Arjhun S. | Blog',
-    description:
-      'Welcome to my blog. I write about the things that make me curious.',
-    openGraph: {
-      images: [
-        {
-          url: `${ogImage}?${randomFiveDigitNumber()}`,
-          width: 1600,
-          height: 836,
-          alt: 'Vishwanath B.',
-        },
-      ],
-      title: 'Arjhun S. | Blog',
-      description:
-        'Welcome to my blog. I write about the things that make me curious.',
-      url: `${process.env.NEXT_PUBLIC_URL}/blog`,
-    },
-    twitter: {
-      title: 'Arjhun S. | Blog',
-      description:
-        'Welcome to my blog. I write about the things that make me curious.',
-      card: 'summary_large_image',
-    },
-  };
-}
 
 export default function BlogListPage() {
 

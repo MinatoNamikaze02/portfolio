@@ -1,18 +1,18 @@
 [
     {
       "id": 1,
-      "role": "Associate Applications Developer",
+      "role": "Software Engineer",
       "company": "Oracle",
       "duration": "July 2024 - Present",
       "logoSrc": "/images/oraclelogo.jpg",
-      "toolsUsed": "Java, OJET, PL/SQL, TypeScript",
-      "description": "Working in the Enterprise risk and finance team within Oracle's financial services division.",
+      "toolsUsed": "Python, Kubernetes",
+      "description": "Currently working on the AFCS (Accounting Financial Cloud Services) team.",
       "location": "Bangalore, KA"
     },
     {
       "id": 2,
       "role": "Software Development Engineer Intern",
-      "company": "carbonmarketsHQ",
+      "company": "CarbonmarketsHQ",
       "duration": "Feb 2024 - July 2024 (6 mos)",
       "logoSrc": "/images/carbonmarketshqlogo.jpg",
       "toolsUsed": "Python, FastAPI, PostgreSQL, GenerativeAI",
@@ -22,7 +22,7 @@
     {
       "id": 3,
       "role": "Student Researcher",
-      "company": "AMuDA lab, Amrita School of Computing, Coimbatore.",
+      "company": "Sony SSUP x Amrita",
       "duration": "Nov 2019 - Dec 2023 (1 year 1 mos)",
       "logoSrc": "/images/amrita.png",
       "toolsUsed": "GraphDB, InfluxDB, IOT, Cyber-Physical-Systems, Networking, Hosting",
